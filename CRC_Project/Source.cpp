@@ -87,15 +87,18 @@ string append (string message , string reminder)
 bool CheckReminder (string reminder)
 {
 	bool status = true ;
-	if (reminder == "000")
+	for(int i =0 ; i < reminder.length() ;i++)
 	{
-		status= true ;
+		if (reminder[i] == '0')
+		{
+			status= true ;
+		}
+		else
+			return false;
 	}
-	else status = false ;
 
 	return status;
 }
-
 
 
 /////////////////////////////////////////////////////////////////////////////
