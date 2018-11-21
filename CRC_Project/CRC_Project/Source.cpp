@@ -57,7 +57,7 @@ string CRC_Division(string message, string polynomial)
 	string messagePoly_str = message + zeros.substr(0, P_length - 1);
 	int MK_length = messagePoly_str.length();
 	string XOR_Out = polynomial;
-
+	 
 	if (messagePoly_str[0] == '1')
 		XOR_Out = XOR(messagePoly_str.substr(0, P_length), polynomial);
 	else
@@ -65,10 +65,11 @@ string CRC_Division(string message, string polynomial)
 
 	for (int i = P_length; i < MK_length; i++)
 	{
-		XOR_Out = XOR_Out.substr(1, XOR_Out.length() - 1) + messagePoly_str[i];
+		XOR_Out = XOR_Out.substr(1, XOR_Out.length() - 1) + messagePoly_str[i]; //updating xou output and appending 1 bit from the divisor
 		if (XOR_Out[0] == '1')
 			XOR_Out = XOR(XOR_Out, polynomial);
 	}
+	//remove first bit 
 	XOR_Out = XOR_Out.substr(1, XOR_Out.length() - 1);
 	return XOR_Out;
 }
