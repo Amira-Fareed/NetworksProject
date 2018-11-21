@@ -74,6 +74,34 @@ string CRC_Division(string message, string polynomial)
 	return XOR_Out;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////mayar//////////////////////
+
+
+string append (string message , string reminder)
+{
+
+    string Tm = message + reminder ;
+    return Tm ;
+}
+
+
+bool CheckReminder (string reminder)
+{
+    bool status = true ;
+
+    if (reminder == "0")
+
+    {
+        status= true ;
+    }
+    else status= false ;
+
+    return status;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////
 void main()
 {
 	string Message ,Divisor ;
