@@ -79,41 +79,58 @@ string CRC_Division(string message, string polynomial)
 
 string append (string message , string reminder)
 {
-
-    string Tm = message + reminder ;
-    return Tm ;
+	string Tm = message + reminder ;
+	return Tm ;
 }
 
 
 bool CheckReminder (string reminder)
 {
-    bool status = true ;
+	bool status = true ;
+	if (reminder == "000")
+	{
+		status= true ;
+	}
+	else status = false ;
 
-    if (reminder == "0")
-
-    {
-        status= true ;
-    }
-    else status= false ;
-
-    return status;
+	return status;
 }
 
 
 
 /////////////////////////////////////////////////////////////////////////////
-void main()
+/////////////////////////////////////// Basma ////////////////////////////////////////
+int main()
 {
-	string Message ,Divisor ;
+string Message, Divisor, RemainderTx, RemainderRx, Transmitted_msg, Received_msg;
+bool Status;
+int n;
+    
 
-	// testing reading from file and alter functions
-	int n;
-	Read_from_file(Message ,Divisor);
-	cout << Message <<endl << Divisor <<endl ;
-	cout << "enter bit no to be changed \n";
-	cin >> n;
-	cout << alter(Message ,n) <<endl;
+Read_from_file(Message ,Divisor);
+RemainderTx = CRC_Division(Message, Divisor);
+Transmitted_msg = append (Message, RemainderTx);
+cout << "Transmitted_msg is: " << Transmitted_msg <<endl; 
+cout << "Do you want to alter any bit?" <<endl <<  "IF yes please enter bit number to be changed" <<endl << "IF no please enter 0" <<endl;
+cin >> n;
+if (n!=0)
+	Received_msg = alter(Transmitted_msg ,n);
+else 
+	Received_msg = Transmitted_msg;
 
-	
-	system("pause");
+cout << "Received_msg is: " << Received_msg << endl;
+
+RemainderRx = CRC_Division(Received_msg, Divisor);
+Status = CheckReminder (RemainderRx);
+
+
+if(Status == 1)
+	cout << "Message is correct" <<endl;
+else 
+	cout << "Message is not correct" <<endl;
+
+cout << "Thank you!" <<endl;
+
+return 0;
+system("pause");
 }
