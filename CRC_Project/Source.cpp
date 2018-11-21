@@ -134,6 +134,6 @@ else
 
 cout << "Thank you!" <<endl;
 
-return 0;
 system("pause");
+return 0;
 }
