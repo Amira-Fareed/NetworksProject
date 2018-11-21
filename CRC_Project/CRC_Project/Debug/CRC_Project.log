@@ -1,8 +1,9 @@
-﻿Build started 21-Nov-18 5:36:39 PM.
+﻿Build started 21-Nov-18 5:50:13 PM.
      1>Project "C:\Users\Lenovo\Desktop\Networks Project\NetworksProject\CRC_Project\CRC_Project\CRC_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
+     1>c:\users\lenovo\desktop\networks project\networksproject\crc_project\crc_project\source.cpp(16): warning C4018: '<=' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Lenovo\Desktop\Networks Project\NetworksProject\CRC_Project\Debug\CRC_Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Lenovo\Desktop\Networks Project\NetworksProject\CRC_Project\Debug\CRC_Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Lenovo\Desktop\Networks Project\NetworksProject\CRC_Project\Debug\CRC_Project.lib" /MACHINE:X86 Debug\Source.obj
          CRC_Project.vcxproj -> C:\Users\Lenovo\Desktop\Networks Project\NetworksProject\CRC_Project\Debug\CRC_Project.exe
@@ -10,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.08
+Time Elapsed 00:00:05.67

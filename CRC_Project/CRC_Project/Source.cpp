@@ -11,14 +11,14 @@ void Read_from_file(string& Message ,string& Divisor)
 	ip>> Message;
 	ip>> Divisor ;
 }
-string alter (string message)
+string alter (string message , int bit_no)
 {
-	if(message.length()>0)
+	if(bit_no <=message.length())
 	{
-		if(message[0] == '0')
-			message[0] = '1';
+		if(message[bit_no - 1] == '0')
+			message[bit_no - 1] = '1';
 		else 
-			message[0] = '0';
+			message[bit_no - 1] = '0';
 	}
 	return message;
 }
@@ -28,11 +28,13 @@ void main()
 	string Message ,Divisor ;
 
 	// testing reading from file and alter functions
-	/*
+	int n;
 	Read_from_file(Message ,Divisor);
 	cout << Message <<endl << Divisor <<endl ;
-	cout << alter(Message) <<endl;
+	cout << "enter bit no to be changed \n";
+	cin >> n;
+	cout << alter(Message ,n) <<endl;
 
-	*/
+	
 	system("pause");
 }
